@@ -2,15 +2,20 @@ package main
 
 import (
 	"database/sql"
-	"log"
 	"fmt"
+	"log"
+	"os"
 
+	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
 
 func main() {
-	connStr := "host=44.226.241.215 port=5432 user=esundblad password=SunWood4117? dbname=ignition8 sslmode=disable"
-	//connStr := "postgres://esundblad:'SunWood4117?'@44.226.241.215:5434/ignition8?sslmode=verify-full"
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found")
+	}
+
+	connStr := os.Getenv("POSGRSTRING")
 	db, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)

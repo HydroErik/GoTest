@@ -9,6 +9,7 @@ import (
 	"time"
 	
 	//"go.mongodb.org/mongo-driver/bson/primitive"
+	"github.com/joho/godotenv"
 	"golang.org/x/crypto/bcrypt"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -26,6 +27,12 @@ func encryptPass(old_pass string) (string, error) {
 
 func main() {
 
+
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found")
+	}
+
+	mongoUrl := os.Getenv("MONGOSTRING")
 	ctx, cancel := context.WithTimeout(context.Background(), 20*time.Second)
 	defer cancel()
 	mongUrl := "mongodb+srv://esun:SunWood4117!@cluster0.q4mlyke.mongodb.net/?retryWrites=true&w=majority"
