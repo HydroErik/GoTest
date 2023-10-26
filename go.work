@@ -1,0 +1,10 @@
+go 1.21.0
+
+use ./sftp
+use ./hello
+use ./module_test
+use ./mongo_con
+use ./pg_con
+use ./ssl_check
+use ./encrypter
+use ./API
