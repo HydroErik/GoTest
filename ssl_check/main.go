@@ -14,7 +14,7 @@ func demoHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 
 	http.HandleFunc("/demo/", demoHandler)
-	fmt.Println("Server Running")
+	fmt.Println("Server Opperational")
 
 	log.Fatal(http.ListenAndServe(":80", nil))
 	//log.Fatal(http.ListenAndServeTLS(":443", "/etc/letsencrypt/live/sites.hydrologik.net/fullchain.pem", "/etc/letsencrypt/live/sites.hydrologik.net/privkey.pem", nil))
