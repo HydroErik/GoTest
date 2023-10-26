@@ -1,0 +1,87 @@
+{
+    "Pipes" : {
+      "pipes" : [ {
+        "adminProperties" : {
+          "adminProperties" : [ {
+            "name" : "STRING_TEST",
+            "selectListName" : "",
+            "validationRules" : "MAX_LENGTH=10",
+            "ordering" : "01",
+            "defaultValue" : "Testing 1, 2, 3",
+            "dataType" : "hString",
+            "helpInfo" : "Just enter any old string",
+            "deactivationRules" : "",
+            "title" : "My String Test",
+            "value" : ""
+          }, {
+            "name" : "INTEGER_TEST",
+            "selectListName" : "",
+            "validationRules" : "RANGE=1-10",
+            "ordering" : "02",
+            "defaultValue" : "42",
+            "dataType" : "hInteger",
+            "helpInfo" : "Just enter a number, 1 to 10",
+            "deactivationRules" : "",
+            "title" : "My Integer Test",
+            "value" : ""
+          }, {
+            "name" : "BOOLEAN_TEST",
+            "selectListName" : "",
+            "validationRules" : "",
+            "ordering" : "03",
+            "defaultValue" : "No",
+            "dataType" : "hBoolean",
+            "helpInfo" : "Just answer the question",
+            "deactivationRules" : "",
+            "title" : "My Boolean Test",
+            "value" : ""
+          }, {
+            "name" : "DATETIME_TEST",
+            "selectListName" : "",
+            "validationRules" : "",
+            "ordering" : "04",
+            "defaultValue" : "",
+            "dataType" : "hDateTime",
+            "helpInfo" : "Enter today's date",
+            "deactivationRules" : "",
+            "title" : "My Date Time Test",
+            "value" : ""
+          } ]
+        },
+        "name" : "PropertiesTest",
+        "description" : "Test for properties and admin properties",
+        "id" : "1694916525",
+        "pipeType" : "TRANSFORMER"
+      }, {
+        "adminProperties" : {
+          "adminProperties" : [ {
+            "name" : "STRING_TEST",
+            "selectListName" : "",
+            "validationRules" : "MAX_LENGTH=10",
+            "ordering" : "01",
+            "defaultValue" : "Testing 1, 2, 3",
+            "dataType" : "hString",
+            "helpInfo" : "Just enter any old string",
+            "deactivationRules" : "",
+            "title" : "My String Test",
+            "value" : ""
+          }, {
+            "name" : "INTEGER_TEST",
+            "selectListName" : "",
+            "validationRules" : "RANGE=1-10",
+            "ordering" : "02",
+            "defaultValue" : "42",
+            "dataType" : "hInteger",
+            "helpInfo" : "Just enter a number, 1 - 10",
+            "deactivationRules" : "",
+            "title" : "My Integer Test",
+            "value" : ""
+          } ]
+        },
+        "name" : "Another Properties Test",
+        "description" : "Another Test for properties and admin properties",
+        "id" : "1694916789",
+        "pipeType" : "TRANSFORMER"
+      } ]
+    }
+  }
