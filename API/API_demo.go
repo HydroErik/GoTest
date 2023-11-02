@@ -58,10 +58,8 @@ func main() {
 	urlString := "http://35.88.227.145:8080/pipes?pipeType=TRANSFORMER&adminProperties=Yes"
 
 	type PipeObj struct {
-		Pipes struct {
 			Pipes []struct {
-				AdminProperties struct {
-					AdminProps []struct {
+				AdminProperties []struct {
 						Name              string `json:"name"`
 						SelectListName    string `json:"selectListName"`
 						ValidationRules   string `json:"validationRules"`
@@ -73,13 +71,11 @@ func main() {
 						Title             string `json:"title"`
 						Value             string `json:"value"`
 					} `json:"adminProperties"`
-				} `json:"adminProperties"`
 				Name        string `json:"name"`
 				Description string `json:"description"`
 				Id          string `json:"id"`
 				PipeType    string `json:"pipeType"`
 			} `json:"pipes"`
-		} `json:"Pipes"`
 	}
 
 	res, err := http.Get(urlString)
@@ -93,6 +89,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	//fmt.Println(string(body))
+
 	var p1 PipeObj
 
 	err = json.Unmarshal(body, &p1)
@@ -100,12 +98,12 @@ func main() {
 		log.Fatal(err)
 	}
 
-	for _, p := range p1.Pipes.Pipes {
+	for _, p := range p1.Pipes {
 		fmt.Println(p.Name)
-		for _, q := range p.AdminProperties.AdminProps {
+		for _, q := range p.AdminProperties {
 			fmt.Printf("\t%s\n", q)
 		}
 	}
 
-	fmt.Println(p1.Pipes.Pipes[0].AdminProperties.AdminProps[0].Name)
+	//fmt.Println(p1.Pipes[0].AdminProperties[0].Name)
 }
